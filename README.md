@@ -6,8 +6,11 @@
   - [关于攻略](#%E5%85%B3%E4%BA%8E%E6%94%BB%E7%95%A5)
   - [通关教程](#%E9%80%9A%E5%85%B3%E6%95%99%E7%A8%8B)
     - [第0关 - 热身](#%E7%AC%AC0%E5%85%B3---%E7%83%AD%E8%BA%AB)
-    - [第1题 - 那么，字符替换如何？](#%E7%AC%AC1%E9%A2%98---%E9%82%A3%E4%B9%88%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2%E5%A6%82%E4%BD%95)
-    - [第2题 - 光学字符识别](#%E7%AC%AC2%E9%A2%98---%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)
+    - [第1关 - 那么，字符替换如何？](#%E7%AC%AC1%E5%85%B3---%E9%82%A3%E4%B9%88%E5%AD%97%E7%AC%A6%E6%9B%BF%E6%8D%A2%E5%A6%82%E4%BD%95)
+    - [第2关 - 光学字符识别](#%E7%AC%AC2%E5%85%B3---%E5%85%89%E5%AD%A6%E5%AD%97%E7%AC%A6%E8%AF%86%E5%88%AB)
+    - [第3关 - 正则表达式](#%E7%AC%AC3%E5%85%B3---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+    - [第4关 - 追随重定向链](#%E7%AC%AC4%E5%85%B3---%E8%BF%BD%E9%9A%8F%E9%87%8D%E5%AE%9A%E5%90%91%E9%93%BE)
+    - [第5关 - 山峰　地狱](#%E7%AC%AC5%E5%85%B3---%E5%B1%B1%E5%B3%B0-%E5%9C%B0%E7%8B%B1)
 
 <!-- /TOC -->
 
@@ -45,7 +48,7 @@
 
 ### 第0关 - 热身
 
-[**跳转到本题**](http://www.pythonchallenge.com/pc/def/0.html)
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/0.html)
 
 &emsp;&emsp;使用[脚本](src/0.py)计算图片所示的表达式，得到
 $$ \huge 2^{38} = 274,877,906,944 $$
@@ -56,9 +59,9 @@ $$ \huge 2^{38} = 274,877,906,944 $$
 
 &emsp;&emsp;将链接替换为`274877906944.html`，进入下一关。
 
-### 第1题 - 那么，字符替换如何？
+### 第1关 - 那么，字符替换如何？
 
-[**跳转到本题**](http://www.pythonchallenge.com/pc/def/274877906944.html)
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/274877906944.html)
 
 &emsp;&emsp;图片给出的是一张字符映射表，其映射逻辑是将每个字母按照字母表向后移动2位。第1句金色提示的内容为：
 
@@ -70,9 +73,9 @@ $$ \huge 2^{38} = 274,877,906,944 $$
 
 &emsp;&emsp;将链接替换为`ocr.html`，进入下一关。
 
-### 第2题 - 光学字符识别
+### 第2关 - 光学字符识别
 
-[**跳转到本题**](http://www.pythonchallenge.com/pc/def/ocr.html)
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/ocr.html)
 
 &emsp;&emsp;图片是一本书，即使是借助浏览器放大至$500\\\%$也无法看清书中的字符。
 
@@ -84,6 +87,70 @@ $$ \huge 2^{38} = 274,877,906,944 $$
 
 > 找到下方乱码中出现次数最少的字符。
 
+&emsp;&emsp;大致浏览乱码可以发现，乱码的起始字符是`%`，整段乱码的上下有HTML注释标记`<!--`和`-->`包围。这将在后面的正则表达式中起到关键作用。
+
 &emsp;&emsp;通过[脚本](src/2.py)爬取网页（乱码太长了，你自己愿意复制并粘贴乱码也是可以的）并按照要求解析乱码，得到数量最少的字符为：`equality`。
 
 &emsp;&emsp;将链接替换为`equality.html`，进入下一关。
+
+### 第3关 - 正则表达式
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/equality.html)
+
+&emsp;&emsp;这道题目的图片是没有提示作用的。真正的提示是图片下方的金色文本：
+
+> 一个小写字母，两侧都正好有3个大写字母作保镖。
+
+&emsp;&emsp;依旧打开网页源代码，最后也有一段乱码。大致浏览乱码发现其中的乱码只有混合大小写的英文字母。通过[脚本](src/3.py)爬取网页并进行正则表达式匹配，得到指定的内容为`linkedlist`。
+
+&emsp;&emsp;将链接替换为`linkedlist.html`，进入重定向指示页。根据页面提示重定向到`linkedlist.php`，进入下一关。
+
+### 第4关 - 追随重定向链
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/linkedlist.php)
+
+&emsp;&emsp;题目只有一张图片，点击图片跳转到重定向链头页面`linkedlist.php?nothing=12345`。
+
+&emsp;&emsp;页面内容显示（每次获取关卡得到的重定向链不一定相同）：
+
+> 紧接着，下一个`nothing`的值是44827
+
+按照页面指示多次替换，发现页面存在通用的提示语。
+
+&emsp;&emsp;编写脚本自动破解重定向链，不断跳转后得到一个特殊情况并触发`AttributeError`异常：
+
+```py
+from requests import get
+from re import search
+
+if __name__ == "__main__":
+    # 设置初始页面
+    page_id = "12345"
+    # 设置页面前缀
+    PREFIX = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
+    while True:
+        web_page = get(PREFIX + page_id)
+        print(web_page.text)
+        page_id = search(
+            r"nothing is ([0-9]+)",
+            web_page.text
+        ).group(1)
+```
+
+> 是的！除以2并继续。
+
+&emsp;&emsp;改进[脚本](src/4.py)，借助`try/except`结构处理特殊情况。最终得到下一关的链接为`peak.html`。
+
+### 第5关 - 山峰　地狱
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/peak.html)
+
+&emsp;&emsp;从这里开始，就需要一些比较特别的知识了。图片是没有提示意义的，页面给出的提示是
+
+> 读一下
+
+多次拼读后，`peak hell`会越来越像Python提供的对象序列化模块`pickle`。
+
+&emsp;&emsp;查看网页源代码，发现HTML标签`<peakhell src="banner.p" />`。使用[脚本](src/5.py)爬取pickle数据包`banner.p`并解包，并根据获得的二维列表绘制字符画。
+
+&emsp;&emsp;字符画的内容是`channel`，将链接替换为`channel.html`，进入下一关。
