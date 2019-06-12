@@ -11,6 +11,7 @@
     - [第3关 - 正则表达式](#%E7%AC%AC3%E5%85%B3---%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F)
     - [第4关 - 追随重定向链](#%E7%AC%AC4%E5%85%B3---%E8%BF%BD%E9%9A%8F%E9%87%8D%E5%AE%9A%E5%90%91%E9%93%BE)
     - [第5关 - 山峰　地狱](#%E7%AC%AC5%E5%85%B3---%E5%B1%B1%E5%B3%B0-%E5%9C%B0%E7%8B%B1)
+    - [第6关 - 现在，它们是成对的](#%E7%AC%AC6%E5%85%B3---%E7%8E%B0%E5%9C%A8%E5%AE%83%E4%BB%AC%E6%98%AF%E6%88%90%E5%AF%B9%E7%9A%84)
 
 <!-- /TOC -->
 
@@ -119,7 +120,7 @@ $$ \huge 2^{38} = 274,877,906,944 $$
 
 &emsp;&emsp;编写脚本自动破解重定向链，不断跳转后得到一个特殊情况并触发`AttributeError`异常：
 
-```py
+```python
 from requests import get
 from re import search
 
@@ -154,3 +155,66 @@ if __name__ == "__main__":
 &emsp;&emsp;查看网页源代码，发现HTML标签`<peakhell src="banner.p" />`。使用[脚本](src/5.py)爬取pickle数据包`banner.p`并解包，并根据获得的二维列表绘制字符画。
 
 &emsp;&emsp;字符画的内容是`channel`，将链接替换为`channel.html`，进入下一关。
+
+### 第6关 - 现在，它们是成对的
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/channel.html)
+
+&emsp;&emsp;图片是一套拉链（`zip`），网页源代码也写着`<html> <!-- <-- zip -->`，这两个提示都告诉我们这一题可能与Zip压缩文件相关。
+
+&emsp;&emsp;将链接替换为`channel.zip`，下载压缩包到本地并解压到`channel/`文件夹。查看`channel/readme.txt`，解题逻辑与第4关相同，从`channel/90052.txt`开始遍历。
+
+```python
+from re import search
+
+if __name__ == "__main__":
+    file_ID = "90052"
+
+    while True:
+        target = open("resources/channel/" + file_ID + ".txt", "r")
+        raw_text = target.read()
+        target.close()
+        print(raw_text)
+        try:
+            file_ID = search(r"([0-9]+)", raw_text).group(1)
+        except AttributeError:
+            break
+```
+
+&emsp;&emsp;执行脚本，得到新提示：
+
+> 收集注释
+
+`channel.zip`中的每一个文件都附带了注释，改进脚本借助`zipfile`将它们提取出来。
+
+```python
+from re import search
+import zipfile
+
+if __name__ == "__main__":
+    file_ID = "90052"
+    zip_file = zipfile.ZipFile("resources/channel.zip")
+    comments = list()
+
+    while True:
+        comments.append(
+            zip_file.getinfo(
+                file_ID + ".txt"
+            ).comment.decode("UTF-8")
+        )
+        target = open("resources/channel/" + file_ID + ".txt", "r")
+        raw_text = target.read()
+        target.close()
+        try:
+            file_ID = search(r"([0-9]+)", raw_text).group(1)
+        except AttributeError:
+            break
+
+    print("".join(comments))
+```
+
+&emsp;&emsp;执行脚本，得到字符画`HOCKEY`。重定向到`hockey.html`，获得提示：
+
+> 它们在空气中，注意看字母。
+
+&emsp;&emsp;组成字符画的字母是`oxygen`，重定向到`oxygen.html`，进入下一关。
