@@ -2,26 +2,28 @@
 
 <!-- TOC -->
 
-- [关于 The Python Challenge](#关于-the-python-challenge)
+- [关于 The Python Challenge](#关于-The-Python-Challenge)
 - [关于攻略](#关于攻略)
 - [通关教程](#通关教程)
   - [第0关 - 热身](#第0关---热身)
-  - [第1关 - 那么，字符替换如何？](#第1关---那么字符替换如何)
+  - [第1关 - 那么，字符替换如何](#第1关---那么字符替换如何)
   - [第2关 - 光学字符识别](#第2关---光学字符识别)
   - [第3关 - 正则表达式](#第3关---正则表达式)
   - [第4关 - 追随重定向链](#第4关---追随重定向链)
   - [第5关 - 山峰 地狱](#第5关---山峰地狱)
   - [第6关 - 现在，它们是成对的](#第6关---现在它们是成对的)
   - [第7关 - 自作聪明](#第7关---自作聪明)
-  - [第8关 - 很勤劳吗？](#第8关---很勤劳吗)
+  - [第8关 - 很勤劳吗](#第8关---很勤劳吗)
   - [第9关 - 连点成线](#第9关---连点成线)
-  - [第10关 - 你在看什么？](#第10关---你在看什么)
+  - [第10关 - 你在看什么](#第10关---你在看什么)
   - [第11关 - 奇数 偶数](#第11关---奇数偶数)
   - [第12关 - 解决恶魔](#第12关---解决恶魔)
   - [第13关 - 打电话给他](#第13关---打电话给他)
   - [第14关 - 绕圈圈](#第14关---绕圈圈)
-  - [第15关 - 谁？](#第15关---谁)
+  - [第15关 - 谁](#第15关---谁)
   - [第16关 - 让我把它变直](#第16关---让我把它变直)
+  - [第17关 - 吃](#第17关---吃)
+  - [第17.5关 - 是我，你想要什么](#第175关---是我你想要什么)
 
 <!-- /TOC -->
 
@@ -70,7 +72,7 @@ $$ \huge 2^{38} = 274,877,906,944 $$
 
 &emsp;&emsp;将链接替换为`274877906944.html`，进入下一关。
 
-### 第1关 - 那么，字符替换如何？
+### 第1关 - 那么，字符替换如何
 
 [**跳转到关卡**](http://www.pythonchallenge.com/pc/def/274877906944.html)
 
@@ -239,7 +241,7 @@ if __name__ == "__main__":
 
 &emsp;&emsp;执行[脚本](src/Part2/7.py)，得到`integrity`，重定向到`integrity.html`，进入下一关。
 
-### 第8关 - 很勤劳吗？
+### 第8关 - 很勤劳吗
 
 [**跳转到关卡**](http://www.pythonchallenge.com/pc/def/integrity.html)
 
@@ -328,7 +330,7 @@ second:
 
 继续重定向到`bull.html`，进入下一关。
 
-### 第10关 - 你在看什么？
+### 第10关 - 你在看什么
 
 [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/bull.html)
 
@@ -415,7 +417,7 @@ $$ \large len(a[30])=5808 $$
 
 重定向到`uzi.html`，进入下一关。
 
-### 第15关 - 谁？
+### 第15关 - 谁
 
 [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/uzi.html)
 
@@ -426,7 +428,10 @@ $$ \large len(a[30])=5808 $$
 <!-- todo: buy flowers for tomorrow -->
 ```
 
-这么看有2个信息：他是年龄第2小的人、且明天（1月27日）将有重要的事情。
+&emsp;&emsp;注释给了我们2个信息：
+
+- 他不是最小的，他是第2小的
+- 待办事项：为明天买花
 
 &emsp;&emsp;日期已经确定了，那么年份呢？将网页放大到$500\\\%$，隐约在右下角的2个小日历里发现当年的2月是有29天的。好的，在1006～1996年中寻找满足以下条件的年份：
 
@@ -438,8 +443,48 @@ $$ \large len(a[30])=5808 $$
 
 ### 第16关 - 让我把它变直
 
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/return/mozart.html)
+- [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/mozart.html)
+- [脚本](src/Part4/17.py)
 
 &emsp;&emsp;题目有一张雪花状的图片，上面存在大量的粉红色短线条。按照页面标题的指引，应该是使用图像处理把它们变直~~（源代码我看过了，什么也线索没有）~~。
 
 &emsp;&emsp;下载题目的图片`mozart.gif`，编写并运行[脚本](src/Part4/16.py)，获得图片（处理后的图片失去了其应有的色彩，但不影响效果）的内容是`romance`。访问`romance.html`进入下一关。
+
+### 第17关 - 吃
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/return/romance.html)
+
+&emsp;&emsp;题目的图片由2幅图片拼合而成，大图片是一些**曲奇饼干（Cookies）**，而左下角的图片正好在第4题也出现过。
+
+&emsp;&emsp;根据图片和网页标题的提示，我们需要在浏览器的缓存（Cookies）中进一步寻找线索。在浏览器（我用的是Google Chrome）中看到其中一个Cookie的内容是~~（注：此处我由于无法获取Cookie差点卡关了）~~：
+
+> 你需要跟着`busynothing`
+
+&emsp;&emsp;结合左下角那张第4题的图片，我们应该需要从`http://www.pythonchallenge.com/pc/def/linkedlist.php?busynothing=12345`开始按照跳转顺序获取Cookie的内容。
+
+&emsp;&emsp;编写并运行脚本，得到一串以`BZ`开头的`bz2`压缩字符串：
+
+> BZh91AY%26SY%94%3A%E2I%00%00%21%19%80P%81%11%00%AFg%9E%A0+%00hE%3DM%B5%23%D0%
+> D4%D1%E2%8D%06%A9%FA%26S%D4%D3%21%A1%EAi7h%9B%9A%2B%BF%60%22%C5WX%E1%ADL%80%E
+> 8V%3C%C6%A8%DBH%2632%18%A8x%01%08%21%8DS%0B%C8%AF%96KO%CA2%B0%F1%BD%1Du%A0%86
+> %05%92s%B0%92%C4Bc%F1w%24S%85%09%09C%AE%24%90
+
+&emsp;&emsp;改进脚本，将压缩字符串中的`+`替换为`%20`，借助`urllib.parse.unquote_to_bytes`函数转换为字节串再提供给`bz2.decompress`函数解压，得到：
+
+> 已经26日了？打电话给他的父亲并告知他“花已经在路上了”，他会明白的。
+
+&emsp;&emsp;又是“打电话”？还是用回第13题的方法，打电话给列奥波尔得·莫扎特（**Leopold** Mozart，沃尔夫冈·阿玛多伊斯·莫扎特的父亲，~~奥地利宫廷乐师、作曲家、小提琴家~~），并将信息作为Cookie附加在请求中，得到回复：
+
+> 555-VIOLIN
+
+&emsp;&emsp;前往`violin.html`，进入中间关卡。
+
+### 第17.5关 - 是我，你想要什么
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/stuff/violin.php)
+
+&emsp;&emsp;现在，我们联系上列奥波尔得了。在Chrome的开发者工具中，前往`Application -> Storage -> Cookies -> http://www.pythonchallenge.com/`，将`Name = info`项的`Value`修改为`the flowers are on their way`，`F5`刷新页面，得到金色提示：
+
+> 好吧，你绝对不能忘了气球（**balloons**）。
+
+&emsp;&emsp;前往`balloons.html`，自动重定向至下一关（`../return/balloons.html`）。
