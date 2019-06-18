@@ -566,11 +566,11 @@ PwRACEAGPwpADj8JQBA=
 > 内容格式：音频/波形；名称：**`indian.wav`** \
 > 内容编码格式：**base64**
 
-&emsp;&emsp;从列奥波尔得的邮件中我们知道，附件是一段以`Base64`加密的`indian.wav`音频文件。将附件解码为`indian.wav`。音频中存在单词**`sorry`**，前往`sorry.html`，网页源代码只有一句
+&emsp;&emsp;从列奥波尔得的邮件中我们知道，附件是一段以`Base64`加密的`indian.wav`音频文件。将附件解码为`indian.wav`。音频中存在单词`sorry` ，前往`sorry.html`，网页源代码只有一句
 
 > 你为什么要道歉？
 
-&emsp;&emsp;上文提示老列的设备乱码了，尝试对`indian.wav`的所有声道逐帧翻转为`reverse.wav`。播放解码后的`reverse.wav`中有关键词**`idiot`**，访问`idiot.html`，进入过渡页。
+&emsp;&emsp;上文提示老列的设备乱码了，尝试对`indian.wav`的所有声道逐帧翻转为`reverse.wav`。播放解码后的`reverse.wav`中有关键词**idiot**，访问`idiot.html`，进入过渡页。
 
 &emsp;&emsp;老列明白了附件的内容，
 
