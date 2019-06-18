@@ -523,7 +523,7 @@ $$ \large len(a[30])=5808 $$
 
 ### 第19关 - 请
 
-- [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/balloons.html)
+- [**跳转到关卡**](http://www.pythonchallenge.com/pc/hex/bin.html)
 - [脚本](src/Part4/19.py)
 
 &emsp;&emsp;题目是一张印度地图，查看源代码，下面有一段类似于电子邮件的注释：
