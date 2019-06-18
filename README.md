@@ -25,6 +25,7 @@
   - [第17关 - 吃](#第17关---吃)
   - [第17.5关 - 是我，你想要什么](#第175关---是我你想要什么)
   - [第18关 - 你能说出差别吗](#第18关---你能说出差别吗)
+  - [第19关 - 请](#第19关---请)
 
 <!-- /TOC -->
 
@@ -519,3 +520,60 @@ $$ \large len(a[30])=5808 $$
 > fly
 
 &emsp;&emsp;访问`../hex/bin.html`，输入用户名`butter`、密码`fly`，进入下一关。
+
+### 第19关 - 请
+
+- [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/balloons.html)
+- [脚本](src/Part4/19.py)
+
+&emsp;&emsp;题目是一张印度地图，查看源代码，下面有一段类似于电子邮件的注释：
+
+```html
+<!--
+From: leopold.moz@pythonchallenge.com
+Subject: what do you mean by "open the attachment?"
+Mime-version: 1.0
+Content-type: Multipart/mixed; boundary="===============1295515792=="
+
+It is so much easier for you, youngsters.
+Maybe my computer is out of order.
+I have a real work to do and I must know what's inside!
+
+--===============1295515792==
+Content-type: audio/x-wav; name="indian.wav"
+Content-transfer-encoding: base64
+
+UklGRvyzAQBXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YdizAQBABkAMQAtAAEADQAJA
+...（此处省略）
+Bj8HPwdABT8BQApABj8BQA9AAT8IQA0/Dj8EQAk/A0AHQAw/EEAPQAM/AkANPw8/AUAAPwBAB0AA
+PwRACEAGPwpADj8JQBA=
+
+--===============1295515792==--
+
+-->
+```
+
+> 来自：leopold.moz@pythonchallenge.com \
+> 主题：你所说的“打开附件”是什么意思？ \
+> Mime版本：1.0 \
+> 内容类型：多部份/混合，边界为`===============1295515792==`
+>
+> 对你来说应该很简单，年轻人。 \
+> 也许我的电脑**乱码**了， \
+> 我有重要的工作要做，所以我必须要知道它~~此处指附件~~里面是什么。
+>
+> --===============1295515792== \
+> 内容格式：音频/波形；名称：**`indian.wav`** \
+> 内容编码格式：**base64**
+
+&emsp;&emsp;从列奥波尔得的邮件中我们知道，附件是一段以`Base64`加密的`indian.wav`音频文件。将附件解码为`indian.wav`。音频中存在单词**`sorry`**，前往`sorry.html`，网页源代码只有一句
+
+> 你为什么要道歉？
+
+&emsp;&emsp;上文提示老列的设备乱码了，尝试对`indian.wav`的所有声道逐帧翻转为`reverse.wav`。播放解码后的`reverse.wav`中有关键词**`idiot`**，访问`idiot.html`，进入过渡页。
+
+&emsp;&emsp;老列明白了附件的内容，
+
+> 现在你该道歉了……
+
+点击金色链接前往下一关。
