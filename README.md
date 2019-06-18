@@ -502,7 +502,7 @@ $$ \large len(a[30])=5808 $$
 
 > 他比你想象的明显多了
 
-&emsp;&emsp;不就是亮度的差别吗？~~（对，就这么明显，不需要用Python处理图片）~~访问`bright.html`。
+&emsp;&emsp;不就是亮度的差别吗？~~不需要用Python处理图片~~访问`bright.html`。
 
 > ness
 
