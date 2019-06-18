@@ -495,7 +495,7 @@ $$ \large len(a[30])=5808 $$
 
 [**跳转到关卡**](http://www.pythonchallenge.com/pc/return/balloons.html)
 
-&emsp;&emsp;关卡有2张~~（其实是拼接起来的完整一大张）~~图片，图片的内容貌似是一样的（都是2只鹅）。查看网页源代码，得到提示：
+&emsp;&emsp;关卡有2张图片~~其实是拼接起来的完整一大张~~，图片的内容貌似是一样的（都是2只鹅）。查看网页源代码，得到提示：
 
 ```html
 <!-- it is more obvious that what you might think -->
@@ -503,7 +503,7 @@ $$ \large len(a[30])=5808 $$
 
 > 他比你想象的明显多了
 
-&emsp;&emsp;不就是亮度的差别吗？~~（对，就这么明显，不需要用Python处理图片）~~访问`bright.html`。
+&emsp;&emsp;不就是亮度的差别吗？~~不需要用Python处理图片~~访问`bright.html`。
 
 > ness
 
