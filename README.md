@@ -24,6 +24,7 @@
   - [第16关 - 让我把它变直](#第16关---让我把它变直)
   - [第17关 - 吃](#第17关---吃)
   - [第17.5关 - 是我，你想要什么](#第175关---是我你想要什么)
+  - [第18关 - 你能说出差别吗](#第18关---你能说出差别吗)
 
 <!-- /TOC -->
 
@@ -488,3 +489,33 @@ $$ \large len(a[30])=5808 $$
 > 好吧，你绝对不能忘了气球（**balloons**）。
 
 &emsp;&emsp;前往`balloons.html`，自动重定向至下一关（`../return/balloons.html`）。
+
+### 第18关 - 你能说出差别吗
+
+[**跳转到关卡**](http://www.pythonchallenge.com/pc/return/balloons.html)
+
+&emsp;&emsp;关卡有2张~~（其实是拼接起来的完整一大张）~~图片，图片的内容貌似是一样的（都是2只鹅）。查看网页源代码，得到提示：
+
+```html
+<!-- it is more obvious that what you might think -->
+```
+
+> 他比你想象的明显多了
+
+&emsp;&emsp;不就是亮度的差别吗？~~（对，就这么明显，不需要用Python处理图片）~~访问`bright.html`。
+
+> ness
+
+&emsp;&emsp;`ness`？这是什么鬼？单词后缀？尝试访问`brightness.html`，还是刚才的图片。日常看源代码，发现提示：
+
+```html
+<!-- maybe consider deltas.gz -->
+```
+
+&emsp;&emsp;按照提示下载`deltas.gz`~~（`*.gz`是`gzip`压缩文件）~~，解压后得到`delta.txt`。文件内容分为左右2个部分，以3个空格作为分隔。编写[脚本](src/Part4/18.py)，借助`difflib`库对左右两个部分进行差异比对，并将比对产生的3个部分分别转换为字节串写入图片文件中，得到三张图片，内容分别为：
+
+> `../hex/bin.html` \
+> butter \
+> fly
+
+&emsp;&emsp;访问`../hex/bin.html`，输入用户名`butter`、密码`fly`，进入下一关。
