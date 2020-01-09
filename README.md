@@ -1,33 +1,7 @@
 # The Python Challenge 通关教程（转载）
 
-<!-- TOC -->
-
-- [关于 The Python Challenge](#关于-The-Python-Challenge)
-- [关于攻略](#关于攻略)
-- [通关教程](#通关教程)
-  - [第0关 - 热身](#第0关---热身)
-  - [第1关 - 那么，字符替换如何](#第1关---那么字符替换如何)
-  - [第2关 - 光学字符识别](#第2关---光学字符识别)
-  - [第3关 - 正则表达式](#第3关---正则表达式)
-  - [第4关 - 追随重定向链](#第4关---追随重定向链)
-  - [第5关 - 山峰 地狱](#第5关---山峰地狱)
-  - [第6关 - 现在，它们是成对的](#第6关---现在它们是成对的)
-  - [第7关 - 自作聪明](#第7关---自作聪明)
-  - [第8关 - 很勤劳吗](#第8关---很勤劳吗)
-  - [第9关 - 连点成线](#第9关---连点成线)
-  - [第10关 - 你在看什么](#第10关---你在看什么)
-  - [第11关 - 奇数 偶数](#第11关---奇数偶数)
-  - [第12关 - 解决恶魔](#第12关---解决恶魔)
-  - [第13关 - 打电话给他](#第13关---打电话给他)
-  - [第14关 - 绕圈圈](#第14关---绕圈圈)
-  - [第15关 - 谁](#第15关---谁)
-  - [第16关 - 让我把它变直](#第16关---让我把它变直)
-  - [第17关 - 吃](#第17关---吃)
-  - [第17.5关 - 是我，你想要什么](#第175关---是我你想要什么)
-  - [第18关 - 你能说出差别吗](#第18关---你能说出差别吗)
-  - [第19关 - 请](#第19关---请)
-
-<!-- /TOC -->
+[![GitHub license](https://img.shields.io/github/license/Dragon1573/PyChallenge-Tips?color=important&label=Licence&style=flat-square)](https://github.com/Dragon1573/PyChallenge-Tips/blob/master/LICENSE)
+[![This repository supports Jupyter](https://img.shields.io/badge/Jupyter%20Notebook-Support-important?style=flat-square)](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/tree/master)
 
 ## 关于 The Python Challenge
 
@@ -48,127 +22,8 @@
 > - 使用提示！它们在绝大多数时候非常有用。
 >
 > - 研究关卡提供给你的数据。
->
-> - **不要去查找攻略！**（(￣_￣|||)既然你都已经来了，那就当它是放屁吧……）
 
 &emsp;&emsp;本攻略整理自国内各大代码社区或论坛，并可能在那些代码的基础上进行修改。其中，[《一个古老的编程游戏：Python Challenge全通攻略》](https://www.cnblogs.com/jimnox/archive/2009/12/08/tips-to-python-challenge.html)是本文攻略部分的主要来源。
-
-&emsp;&emsp;以下是仓库中各文件或脚本的信息：
-
-- 行尾模式：Windows（CRLF，即`\r\n`）
-- 文件编码：UTF-8（`chcp 65001`）
-- 运行环境：Python Intepreter 3.7.3 64-bit with Anaconda3
-
-## 通关教程
-
-### 第0关 - 热身
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/0.html)
-
-&emsp;&emsp;使用[脚本](src/Part1/0.py)计算图片所示的表达式，得到
-$$ \huge 2^{38} = 274,877,906,944 $$
-
-&emsp;&emsp;下方的黄色内容为（已翻译，下同）：
-
-> 提示：尝试替换URL链接地址
-
-&emsp;&emsp;将链接替换为`274877906944.html`，进入下一关。
-
-### 第1关 - 那么，字符替换如何
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/274877906944.html)
-
-&emsp;&emsp;图片给出的是一张字符映射表，其映射逻辑是将每个字母按照字母表向后移动2位。第1句金色提示的内容为：
-
-> 所有人在解决这个问题前都会先想2次。
-
-使用[脚本](src/Part1/1.py)按照字符映射表替换下方的紫色文本，得到提示：
-
-> 我希望你没有人工地进行翻译，那是计算机做的事。人工翻译是非常低效的，这也是本文段又臭又长地原因，建议使用`string.maketrans()`。现在，对URL链接做相同地处理。
-
-&emsp;&emsp;将链接替换为`ocr.html`，进入下一关。
-
-### 第2关 - 光学字符识别
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/ocr.html)
-
-&emsp;&emsp;图片是一本书，即使是借助浏览器放大至$500\\\%$也无法看清书中的字符。
-
-&emsp;&emsp;橙色的提示内容为：
-
-> 辨认字符。它们可能在书中，也**可能**在页面源代码中。
-
-&emsp;&emsp;`Ctrl + U`查看网页源代码，在页面源代码结尾（此处指`</html>`标签）处，有一句提示和一大段的标点符号乱码：
-
-> 找到下方乱码中出现次数最少的字符。
-
-&emsp;&emsp;大致浏览乱码可以发现，乱码的起始字符是`%`，整段乱码的上下有HTML注释标记`<!--`和`-->`包围。这将在后面的正则表达式中起到关键作用。
-
-&emsp;&emsp;通过[脚本](src/Part1/2.py)爬取网页（乱码太长了，你自己愿意复制并粘贴乱码也是可以的）并按照要求解析乱码，得到数量最少的字符为：`equality`。
-
-&emsp;&emsp;将链接替换为`equality.html`，进入下一关。
-
-### 第3关 - 正则表达式
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/equality.html)
-
-&emsp;&emsp;这道题目的图片是没有提示作用的。真正的提示是图片下方的金色文本：
-
-> 一个小写字母，两侧都正好有3个大写字母作保镖。
-
-&emsp;&emsp;依旧打开网页源代码，最后也有一段乱码。大致浏览乱码发现其中的乱码只有混合大小写的英文字母。通过[脚本](src/Part1/3.py)爬取网页并进行正则表达式匹配，得到指定的内容为`linkedlist`。
-
-&emsp;&emsp;将链接替换为`linkedlist.html`，进入重定向指示页。根据页面提示重定向到`linkedlist.php`，进入下一关。
-
-### 第4关 - 追随重定向链
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/linkedlist.php)
-
-&emsp;&emsp;题目只有一张图片，点击图片跳转到重定向链头页面`linkedlist.php?nothing=12345`。
-
-&emsp;&emsp;页面内容显示（每次获取关卡得到的重定向链不一定相同）：
-
-> 紧接着，下一个`nothing`的值是44827
-
-按照页面指示多次替换，发现页面存在通用的提示语。
-
-&emsp;&emsp;编写脚本自动破解重定向链，不断跳转后得到一个特殊情况并触发`AttributeError`异常：
-
-```python
-from requests import get
-from re import search
-
-if __name__ == "__main__":
-    # 设置初始页面
-    page_id = "12345"
-    # 设置页面前缀
-    PREFIX = "http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing="
-    while True:
-        web_page = get(PREFIX + page_id)
-        print(web_page.text)
-        page_id = search(
-            r"nothing is ([0-9]+)",
-            web_page.text
-        ).group(1)
-```
-
-> 是的！除以2并继续。
-
-&emsp;&emsp;改进[脚本](src/Part1/4.py)，借助`try/except`结构处理特殊情况。最终得到下一关的链接为`peak.html`。
-
-### 第5关 - 山峰&emsp;地狱
-
-[**跳转到关卡**](http://www.pythonchallenge.com/pc/def/peak.html)
-
-&emsp;&emsp;从这里开始，就需要一些比较特别的知识了。图片是没有提示意义的，页面给出的提示是
-
-> 读一下
-
-多次拼读后，`peak hell`会越来越像Python提供的对象序列化模块`pickle`。
-
-&emsp;&emsp;查看网页源代码，发现HTML标签`<peakhell src="banner.p" />`。使用[脚本](src/Part2/5.py)爬取pickle数据包`banner.p`并解包，并根据获得的二维列表绘制字符画。
-
-&emsp;&emsp;字符画的内容是`channel`，将链接替换为`channel.html`，进入下一关。
 
 ### 第6关 - 现在，它们是成对的
 
