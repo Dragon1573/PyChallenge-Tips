@@ -15,3 +15,4 @@
 - [第19关：Please](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part3/Quiz19.ipynb)
 - [第20关：Go away!](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part3/Quiz20.ipynb)
 - [第21关：Pass the parcel](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part3/Quiz21.ipynb)
+- [第22关：Emulate](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part3/Quiz22.ipynb)
