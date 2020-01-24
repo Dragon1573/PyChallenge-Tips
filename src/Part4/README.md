@@ -14,3 +14,5 @@
 
 - [第28关：Many pairs ring-ring](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz28.ipynb)
 - [第29关：Silence!](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz29.ipynb)
+- [第30关：Relax you are on 30](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz30.ipynb)
+- [第31关：Where am I?](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz31.ipynb)
