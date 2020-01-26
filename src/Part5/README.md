@@ -11,6 +11,6 @@
 
 ## 关卡目录
 
-- [第31.5关：UFOs?](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz31-2.ipynb)
-- [第32关：Etch-a-scetch](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz32.ipynb)
-- [第33关：33 bottles of beer on the wall](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part4/Quiz33.ipynb)
+- [第31.5关：UFOs?](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part5/Quiz31-2.ipynb)
+- [第32关：Etch-a-scetch](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part5/Quiz32.ipynb)
+- [第33关：33 bottles of beer on the wall](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/blob/master/src/Part5/Quiz33.ipynb)
