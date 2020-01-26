@@ -1,11 +1,25 @@
 # The Python Challenge 通关教程（转载）
 
 [![GitHub license](https://img.shields.io/github/license/Dragon1573/PyChallenge-Tips?color=important&label=Licence&style=flat-square)](https://github.com/Dragon1573/PyChallenge-Tips/blob/master/LICENSE)
-[![This repository supports Jupyter](https://img.shields.io/badge/Jupyter%20Notebook-Support-important?style=flat-square)](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/tree/master)
+[![This repository supports Jupyter](https://img.shields.io/badge/Jupyter%20Notebook-Support-blue?style=flat-square)](https://nbviewer.jupyter.org/github/Dragon1573/PyChallenge-Tips/tree/master)
 
+<font color="skyblue">
+    <h2>公告</h2>
+    <p>
+        &emsp;&emsp;经过了半年的攻关，终于将
+        <i>The Python Challenge</i>
+        通关了。从即日起，此存储库将被归档封存，且后续不再进行维护。感谢你们对本项目的支持与鼓励！
+    </p>
+    <p>
+        @Dragon1573
+        <br />
+        2020年1月26日&emsp;晚上22时50分
+    </p>
+</font>
+    
 ## 关于 The Python Challenge
 
-&emsp;&emsp;[The Python Challenge](http://www.pythonchallenge.com/)是一个闯关游戏，每一关都需要一点[Python](http://www.python.org/)技巧。这个闯关游戏是由[Nadav Samet](http://www.thesamet.com/)制作的。
+&emsp;&emsp;[*The Python Challenge*](http://www.pythonchallenge.com/)是一个闯关游戏，每一关都需要一点[Python](http://www.python.org/)技巧。这个闯关游戏是由[Nadav Samet](http://www.thesamet.com/)制作的。
 
 &emsp;&emsp;所有的关卡都能通过直接、简短（第32关除外）的脚本解决。
 
